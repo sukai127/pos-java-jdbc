@@ -1,4 +1,6 @@
-package com.thoughtworks.iamcoach.pos;
+package com.thoughtworks.iamcoach.pos.model;
+
+import com.thoughtworks.iamcoach.pos.CartItem;
 
 public class BuyTwoGetOnePromotion extends Promotion{
     @Override
