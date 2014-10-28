@@ -1,5 +1,6 @@
 package com.thoughtworks.iamcoach.pos;
 
+import com.thoughtworks.iamcoach.pos.utils.FileUtils;
 import org.junit.Test;
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,6 +1,6 @@
 package com.thoughtworks.iamcoach.pos.model;
 
-import com.thoughtworks.iamcoach.pos.FileUtils;
+import com.thoughtworks.iamcoach.pos.utils.FileUtils;
 
 import java.io.IOException;
 import java.util.List;

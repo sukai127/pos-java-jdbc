@@ -1,4 +1,4 @@
-package com.thoughtworks.iamcoach.pos;
+package com.thoughtworks.iamcoach.pos.utils;
 
 import java.io.IOException;
 import java.nio.file.FileSystems;
