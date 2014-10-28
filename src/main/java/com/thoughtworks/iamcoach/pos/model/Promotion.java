@@ -2,29 +2,44 @@ package com.thoughtworks.iamcoach.pos.model;
 
 public abstract class Promotion {
 
-    public static final int BUY_TWO_GET_ONE = 0;
-    public static final int SECOND_HALF_PRICE = 1;
-    public static final int DISCOUNT = 2;
+    private int id;
+    private int type;
+    private String content;
+
+    public Promotion(int id, int type, String content) {
+        this.id = id;
+        this.type = type;
+        this.content = content;
+    }
+
+    public Promotion(){
+
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
 
     public abstract double getMoney(CartItem cartItem);
-
-    public static Promotion getPromotion(int type){
-        Promotion promotion = null;
-        switch (type) {
-            case Promotion.BUY_TWO_GET_ONE:
-                promotion = new BuyTwoGetOnePromotion();
-                break;
-            case Promotion.SECOND_HALF_PRICE:
-                promotion = new SecondHalfPricePromotion();
-                break;
-            case Promotion.DISCOUNT:
-                promotion = new DiscountPromotion();
-                break;
-            default:
-                break;
-        }
-
-        return promotion;
-    }
 
 }
