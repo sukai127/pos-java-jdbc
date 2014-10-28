@@ -10,8 +10,8 @@ import java.util.List;
 public class BarcodeScanner implements Scanner{
     public Product getProduct(String barcode) throws IOException {
 
-        DataProvider dataProvider = new DataProvider();
-        List<Product> list = dataProvider.getProductList();
+        ProductService productService = new ProductService();
+        List<Product> list = productService.getProductList();
 
         for(Product product : list){
             if(product.getBarcode().equals(barcode)){

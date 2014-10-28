@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataProvider {
+public class ProductService {
 
     private static List<String> buyTwoGetOneList;
     private static List<String> secondHalfPriceList;
