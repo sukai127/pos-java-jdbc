@@ -1,4 +1,4 @@
-package com.thoughtworks.iamcoach.pos;
+package com.thoughtworks.iamcoach.pos.model;
 
 import java.util.List;
 

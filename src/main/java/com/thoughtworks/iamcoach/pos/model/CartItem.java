@@ -1,7 +1,5 @@
 package com.thoughtworks.iamcoach.pos.model;
 
-import com.thoughtworks.iamcoach.pos.Product;
-
 public class CartItem {
     private Product product;
     private double count;

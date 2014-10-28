@@ -1,5 +1,6 @@
 package com.thoughtworks.iamcoach.pos;
 
+import com.thoughtworks.iamcoach.pos.model.Product;
 import com.thoughtworks.iamcoach.pos.model.Promotion;
 
 import java.io.IOException;
