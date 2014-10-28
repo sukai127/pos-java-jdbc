@@ -2,6 +2,7 @@ package com.thoughtworks.iamcoach.pos;
 
 import com.thoughtworks.iamcoach.pos.model.CartItem;
 import com.thoughtworks.iamcoach.pos.model.Product;
+import com.thoughtworks.iamcoach.pos.service.ProductService;
 
 import java.io.IOException;
 import java.util.ArrayList;

@@ -1,5 +1,6 @@
-package com.thoughtworks.iamcoach.pos;
+package com.thoughtworks.iamcoach.pos.service;
 
+import com.thoughtworks.iamcoach.pos.FileHelper;
 import com.thoughtworks.iamcoach.pos.model.Product;
 import com.thoughtworks.iamcoach.pos.model.Promotion;
 

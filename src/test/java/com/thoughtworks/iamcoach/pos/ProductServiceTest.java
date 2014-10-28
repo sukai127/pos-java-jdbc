@@ -2,6 +2,7 @@ package com.thoughtworks.iamcoach.pos;
 
 import com.thoughtworks.iamcoach.pos.model.Product;
 import com.thoughtworks.iamcoach.pos.model.Promotion;
+import com.thoughtworks.iamcoach.pos.service.ProductService;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
