@@ -1,5 +1,6 @@
 package com.thoughtworks.iamcoach.pos;
 
+import com.thoughtworks.iamcoach.pos.model.CartItem;
 import org.junit.Test;
 
 import java.util.*;

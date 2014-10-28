@@ -1,7 +1,5 @@
 package com.thoughtworks.iamcoach.pos.model;
 
-import com.thoughtworks.iamcoach.pos.CartItem;
-
 public abstract class Promotion {
 
     public static final int BUY_TWO_GET_ONE = 0;

@@ -1,8 +1,7 @@
 package com.thoughtworks.iamcoach.pos;
 
+import com.thoughtworks.iamcoach.pos.model.CartItem;
 import org.junit.Test;
-
-import javax.print.attribute.IntegerSyntax;
 
 import java.util.ArrayList;
 import java.util.List;

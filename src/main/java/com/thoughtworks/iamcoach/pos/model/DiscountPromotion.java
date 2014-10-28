@@ -1,6 +1,5 @@
 package com.thoughtworks.iamcoach.pos.model;
 
-import com.thoughtworks.iamcoach.pos.CartItem;
 import com.thoughtworks.iamcoach.pos.FileHelper;
 
 import java.io.IOException;

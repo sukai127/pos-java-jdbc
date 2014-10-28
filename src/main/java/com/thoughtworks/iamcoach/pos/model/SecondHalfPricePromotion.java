@@ -1,7 +1,5 @@
 package com.thoughtworks.iamcoach.pos.model;
 
-import com.thoughtworks.iamcoach.pos.CartItem;
-
 public class SecondHalfPricePromotion extends Promotion {
 
     @Override
