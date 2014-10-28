@@ -1,6 +1,6 @@
 package com.thoughtworks.iamcoach.pos.model;
 
-import com.thoughtworks.iamcoach.pos.FileHelper;
+import com.thoughtworks.iamcoach.pos.FileUtils;
 
 import java.io.IOException;
 import java.util.List;
@@ -21,7 +21,7 @@ public class DiscountPromotion extends Promotion{
         int discount = 100;
 
         try {
-            list = FileHelper.get("discount_promotion.txt");
+            list = FileUtils.get("discount_promotion.txt");
 
             for(String str : list){
                 if(str.contains(barcode)){

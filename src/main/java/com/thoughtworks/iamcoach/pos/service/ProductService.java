@@ -1,6 +1,6 @@
 package com.thoughtworks.iamcoach.pos.service;
 
-import com.thoughtworks.iamcoach.pos.FileHelper;
+import com.thoughtworks.iamcoach.pos.FileUtils;
 import com.thoughtworks.iamcoach.pos.model.Product;
 import com.thoughtworks.iamcoach.pos.model.Promotion;
 
@@ -17,9 +17,9 @@ public class ProductService {
     static{
         try {
 
-            buyTwoGetOneList = FileHelper.get("buy_two_get_one_free_promotion.txt");
-            secondHalfPriceList = FileHelper.get("second_half_price_promotion.txt");
-            discountList = FileHelper.get("discount_promotion.txt");
+            buyTwoGetOneList = FileUtils.get("buy_two_get_one_free_promotion.txt");
+            secondHalfPriceList = FileUtils.get("second_half_price_promotion.txt");
+            discountList = FileUtils.get("discount_promotion.txt");
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -38,7 +38,7 @@ public class ProductService {
     public List<Product> getProductList() throws IOException {
 
         List<Product> productList = new ArrayList<Product>();
-        List<String> productStringList = FileHelper.get("products.txt");
+        List<String> productStringList = FileUtils.get("products.txt");
 
         for(String str : productStringList){
             Product product = this.buildProduct(str);

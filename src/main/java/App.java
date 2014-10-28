@@ -6,7 +6,7 @@ import java.util.List;
 public class App {
     public static void main(String[] args) {
         try {
-            List list = FileHelper.get("cart.txt");
+            List list = FileUtils.get("cart.txt");
             Scanner scanner = new BarcodeScanner();
             PromotionService promotionService = new PromotionService();
             Pos pos = new Pos(scanner, promotionService);

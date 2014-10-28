@@ -6,11 +6,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-public class FileHelper {
+public class FileUtils {
 
     public static List<String> get (String filename) throws IOException {
 
-        String filepath = FileHelper.class.getClassLoader().getResource(filename).getPath();
+        String filepath = FileUtils.class.getClassLoader().getResource(filename).getPath();
         Path path = FileSystems.getDefault().getPath(filepath);
 
         return Files.readAllLines(path);

@@ -9,15 +9,15 @@ import static org.fest.assertions.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class FileHelperTest {
+public class FileUtilsTest {
     @Test
     public void getTest() throws IOException {
 
-        FileHelper fileHelper = mock(FileHelper.class);
+        FileUtils fileUtils = mock(FileUtils.class);
         BufferedReader br = mock(BufferedReader.class);
         when(br.readLine()).thenReturn("line1", "line2", "line3");
 
-        List list = fileHelper.get("cart.txt");
+        List list = fileUtils.get("cart.txt");
         assertThat(list.size()).isEqualTo(9);
     }
 }
