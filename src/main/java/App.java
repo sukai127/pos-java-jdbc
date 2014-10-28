@@ -1,4 +1,5 @@
 import com.thoughtworks.iamcoach.pos.*;
+import com.thoughtworks.iamcoach.pos.service.PromotionService;
 
 import java.util.List;
 

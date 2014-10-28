@@ -1,6 +1,7 @@
 package com.thoughtworks.iamcoach.pos;
 
 import com.thoughtworks.iamcoach.pos.model.CartItem;
+import com.thoughtworks.iamcoach.pos.service.PromotionService;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
