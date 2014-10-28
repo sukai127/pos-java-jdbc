@@ -3,6 +3,7 @@ package com.thoughtworks.iamcoach.pos;
 import com.thoughtworks.iamcoach.pos.model.Product;
 import com.thoughtworks.iamcoach.pos.model.Promotion;
 import com.thoughtworks.iamcoach.pos.service.ProductService;
+import com.thoughtworks.iamcoach.pos.service.PromotionFactory;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -45,6 +46,6 @@ public class ProductServiceTest {
         List<Integer> list = productService.getPromotionTypeList("ITEM000001");
 
         assertThat(list.size()).isEqualTo(3);
-        assertThat(list.get(0)).isEqualTo(Promotion.BUY_TWO_GET_ONE);
+        assertThat(list.get(0)).isEqualTo(PromotionFactory.BUY_TWO_GET_ONE);
     }
 }

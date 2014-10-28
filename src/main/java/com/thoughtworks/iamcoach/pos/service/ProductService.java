@@ -53,13 +53,13 @@ public class ProductService {
         List<Integer> promotionList = new ArrayList<Integer>();
 
         if(buyTwoGetOneList.contains(barcode)){
-            promotionList.add(Promotion.BUY_TWO_GET_ONE);
+            promotionList.add(PromotionFactory.BUY_TWO_GET_ONE);
         }
         if(secondHalfPriceList.contains(barcode)){
-            promotionList.add(Promotion.SECOND_HALF_PRICE);
+            promotionList.add(PromotionFactory.SECOND_HALF_PRICE);
         }
         if(isExist(discountList,barcode)){
-            promotionList.add(Promotion.DISCOUNT);
+            promotionList.add(PromotionFactory.DISCOUNT);
         }
         return promotionList;
     }

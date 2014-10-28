@@ -16,7 +16,7 @@ public class PromotionService {
         Promotion promotion = null;
 
         for (int i = 0; i < list.size(); i++) {
-            promotion = Promotion.getPromotion(list.get(i));
+            promotion = PromotionFactory.getInstance(list.get(i));
             double subTotal = promotion.getMoney(cartItem);
             money[i] = subTotal;
         }
