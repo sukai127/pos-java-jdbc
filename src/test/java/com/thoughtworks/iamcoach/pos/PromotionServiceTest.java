@@ -9,7 +9,7 @@ import java.util.List;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
-public class PromotionHelperTest {
+public class PromotionServiceTest {
     @Test
     public void should_return_12_when_input_cartItem(){
 
@@ -20,9 +20,9 @@ public class PromotionHelperTest {
 
         Product product = new Product("ITEM000001","可乐","瓶",3.00,list);
         CartItem cartItem = new CartItem(product,6);
-        PromotionHelper  promotionHelper = new PromotionHelper();
+        PromotionService promotionService = new PromotionService();
 
-        double money = promotionHelper.calculateMoney(cartItem);
+        double money = promotionService.calculateMoney(cartItem);
 
         assertThat(money).isEqualTo(12);
     }

@@ -7,8 +7,8 @@ public class App {
         try {
             List list = FileHelper.get("cart.txt");
             Scanner scanner = new BarcodeScanner();
-            PromotionHelper promotionHelper = new PromotionHelper();
-            Pos pos = new Pos(scanner,promotionHelper);
+            PromotionService promotionService = new PromotionService();
+            Pos pos = new Pos(scanner, promotionService);
             pos.printInventory(list);
 
         } catch (Exception e) {

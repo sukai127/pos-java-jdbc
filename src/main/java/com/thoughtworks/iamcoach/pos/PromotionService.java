@@ -6,7 +6,7 @@ import com.thoughtworks.iamcoach.pos.model.Promotion;
 import java.util.Arrays;
 import java.util.List;
 
-public class PromotionHelper {
+public class PromotionService {
 
     public double calculateMoney(CartItem cartItem) {
 

@@ -8,14 +8,14 @@ import java.util.List;
 
 public class Pos {
     private Scanner scanner;
-    private PromotionHelper promotionHelper;
+    private PromotionService promotionService;
 
     public Pos() {
     }
 
-    public Pos(Scanner scanner, PromotionHelper promotionHelper) {
+    public Pos(Scanner scanner, PromotionService promotionService) {
         this.scanner = scanner;
-        this.promotionHelper = promotionHelper;
+        this.promotionService = promotionService;
     }
 
     public Scanner getScanner() {
@@ -26,12 +26,12 @@ public class Pos {
         this.scanner = scanner;
     }
 
-    public PromotionHelper getPromotionHelper() {
-        return promotionHelper;
+    public PromotionService getPromotionService() {
+        return promotionService;
     }
 
-    public void setPromotionHelper(PromotionHelper promotionHelper) {
-        this.promotionHelper = promotionHelper;
+    public void setPromotionService(PromotionService promotionService) {
+        this.promotionService = promotionService;
     }
 
     public void printInventory(List<String> barcodes) throws Exception {
@@ -56,7 +56,7 @@ public class Pos {
 
         for(CartItem cartItem : cartItemList){
             totalMoney += cartItem.getCount() * cartItem.getProduct().getPrice();
-            finalMoney += this.getPromotionHelper().calculateMoney(cartItem);
+            finalMoney += this.getPromotionService().calculateMoney(cartItem);
         }
         discountMoney = totalMoney - finalMoney;
         return "\n\t\t\t\t\t\t\t优惠前:"+ totalMoney+
@@ -73,7 +73,7 @@ public class Pos {
             stringBuffer.append(" \t"+cartItem.getProduct().getUnit()+"\t");
             stringBuffer.append(" \t"+cartItem.getProduct().getPrice());
             stringBuffer.append(" \t"+cartItem.getCount());
-            stringBuffer.append(" \t"+this.getPromotionHelper().calculateMoney(cartItem)+"\n");
+            stringBuffer.append(" \t"+this.getPromotionService().calculateMoney(cartItem)+"\n");
         }
         return stringBuffer.toString();
     }
