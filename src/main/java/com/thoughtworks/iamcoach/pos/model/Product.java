@@ -8,6 +8,7 @@ public class Product {
     private String name;
     private String unit;
     private double price;
+    private Category category;
     private List<Integer> promotionTypes;
 
     public Product() {
@@ -20,6 +21,14 @@ public class Product {
         this.unit = unit;
         this.price = price;
         this.promotionTypes = promotionTypes;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public double getPrice() {
