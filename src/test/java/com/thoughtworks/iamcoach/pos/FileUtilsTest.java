@@ -19,6 +19,6 @@ public class FileUtilsTest {
         when(br.readLine()).thenReturn("line1", "line2", "line3");
 
         List list = fileUtils.get("cart.txt");
-        assertThat(list.size()).isEqualTo(9);
+        assertThat(list.size()).isEqualTo(14);
     }
 }
