@@ -29,4 +29,8 @@ public class PromotionDao extends DbUtils{
 
         return promotionTypes;
     }
+
+    public List<Integer> getPromotionTypes(int id) {
+        return null;
+    }
 }
