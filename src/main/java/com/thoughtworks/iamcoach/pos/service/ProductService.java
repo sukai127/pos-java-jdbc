@@ -2,6 +2,7 @@ package com.thoughtworks.iamcoach.pos.service;
 
 import com.thoughtworks.iamcoach.pos.dao.CategoryDao;
 import com.thoughtworks.iamcoach.pos.dao.ProductDao;
+import com.thoughtworks.iamcoach.pos.dao.PromotionDao;
 import com.thoughtworks.iamcoach.pos.model.Category;
 import com.thoughtworks.iamcoach.pos.utils.FileUtils;
 import com.thoughtworks.iamcoach.pos.model.Product;
@@ -16,6 +17,7 @@ public class ProductService {
 
     private ProductDao productDao = new ProductDao();
     private CategoryDao categoryDao = new CategoryDao();
+    private PromotionDao promotionDao = new PromotionDao();
 
     public List<Product> getProductList() throws SQLException {
 
@@ -23,7 +25,7 @@ public class ProductService {
 
         for(Product product : productList){
             product.setCategory(this.getCategory(product.getId()));
-            productList.add(product);
+            product.setPromotions(this.getPromotionList(product.getId()));
         }
 
         return productList;
@@ -32,6 +34,19 @@ public class ProductService {
     private Category getCategory(int id) throws SQLException {
 
         return categoryDao.getCategory(id);
+    }
+
+    private List<Promotion> getPromotionList(int id) throws SQLException {
+
+        List<Integer> promotionTypes = promotionDao.getPromotionTypes(id);
+        List<Promotion> promotionList = new ArrayList<Promotion>();
+
+        for(Integer type : promotionTypes){
+            Promotion promotion = PromotionFactory.getInstance(type);
+            promotionList.add(promotion);
+        }
+
+        return promotionList;
     }
 
 }
