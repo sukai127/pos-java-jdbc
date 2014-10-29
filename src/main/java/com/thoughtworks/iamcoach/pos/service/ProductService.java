@@ -31,7 +31,7 @@ public class ProductService {
         double price = Double.parseDouble(fields[3]);
 
         List<Promotion> list = this.getPromotions(fields[0]);
-        Product product = new Product(fields[0],fields[1],fields[2],price,list);
+        Product product = new Product(0,fields[0],fields[1],fields[2],price,null,list);
         return product;
     }
 

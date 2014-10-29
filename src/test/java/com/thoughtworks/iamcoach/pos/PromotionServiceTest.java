@@ -18,7 +18,7 @@ public class PromotionServiceTest {
         list.add(new SecondHalfPricePromotion());
         list.add(new DiscountPromotion());
 
-        Product product = new Product("ITEM000001","可乐","瓶",3.00,list);
+        Product product = new Product(1,"ITEM000001","可乐","瓶",3.00,null,list);
         CartItem cartItem = new CartItem(product,6);
         PromotionService promotionService = new PromotionService();
 
