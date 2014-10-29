@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Product {
 
+    private int id;
     private String barcode;
     private String name;
     private String unit;
@@ -15,12 +16,23 @@ public class Product {
 
     }
 
-    public Product(String barcode, String name, String unit, double price, List<Promotion> promotions) {
+    public Product(int id,String barcode, String name, String unit, double price,Category category, List<Promotion> promotions) {
+
+        this.id = id;
         this.barcode = barcode;
         this.name = name;
         this.unit = unit;
         this.price = price;
+        this.category = category;
         this.promotions = promotions;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Category getCategory() {
