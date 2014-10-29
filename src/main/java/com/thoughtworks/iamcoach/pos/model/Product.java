@@ -9,18 +9,18 @@ public class Product {
     private String unit;
     private double price;
     private Category category;
-    private List<Integer> promotionTypes;
+    private List<Promotion> promotions;
 
     public Product() {
 
     }
 
-    public Product(String barcode, String name, String unit, double price, List<Integer> promotionTypes) {
+    public Product(String barcode, String name, String unit, double price, List<Promotion> promotions) {
         this.barcode = barcode;
         this.name = name;
         this.unit = unit;
         this.price = price;
-        this.promotionTypes = promotionTypes;
+        this.promotions = promotions;
     }
 
     public Category getCategory() {
@@ -63,11 +63,11 @@ public class Product {
         this.name = name;
     }
 
-    public List<Integer> getPromotionTypes() {
-        return promotionTypes;
+    public List<Promotion> getPromotions() {
+        return promotions;
     }
 
-    public void setPromotionTypes(List<Integer> promotionTypes) {
-        this.promotionTypes = promotionTypes;
+    public void setPromotions(List<Promotion> promotions) {
+        this.promotions = promotions;
     }
 }

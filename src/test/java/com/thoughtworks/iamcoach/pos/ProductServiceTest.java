@@ -37,15 +37,15 @@ public class ProductServiceTest {
 
         assertThat(productList.size()).isEqualTo(6);
         assertThat(productList.get(0).getName()).isEqualTo("可乐");
-        assertThat(productList.get(1).getPromotionTypes().size()).isEqualTo(3);
+        assertThat(productList.get(1).getPromotions().size()).isEqualTo(3);
     }
 
     @Test
     public void should_return_promotion_list_when_input_barcode() throws IOException {
 
-        List<Integer> list = productService.getPromotionTypeList("ITEM000001");
+        List<Promotion> list = productService.getPromotions("ITEM000001");
 
         assertThat(list.size()).isEqualTo(3);
-        assertThat(list.get(0)).isEqualTo(PromotionFactory.BUY_TWO_GET_ONE);
+        assertThat(list.get(0).getType()).isEqualTo(PromotionFactory.BUY_TWO_GET_ONE);
     }
 }

@@ -10,13 +10,13 @@ public class PromotionService {
 
     public double calculateMoney(CartItem cartItem) {
 
-        List<Integer> list = cartItem.getProduct().getPromotionTypes();
+        List<Promotion> list = cartItem.getProduct().getPromotions();
         double result = cartItem.getProduct().getPrice() * cartItem.getCount();
         double money[] = new double[list.size()];
-        Promotion promotion = null;
+        Promotion promotion;
 
         for (int i = 0; i < list.size(); i++) {
-            promotion = PromotionFactory.getInstance(list.get(i));
+            promotion = list.get(i);
             double subTotal = promotion.getMoney(cartItem);
             money[i] = subTotal;
         }

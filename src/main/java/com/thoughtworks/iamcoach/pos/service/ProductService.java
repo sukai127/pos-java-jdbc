@@ -30,7 +30,7 @@ public class ProductService {
         String []fields = productString.split(",");
         double price = Double.parseDouble(fields[3]);
 
-        List<Integer> list = this.getPromotionTypeList(fields[0]);
+        List<Promotion> list = this.getPromotions(fields[0]);
         Product product = new Product(fields[0],fields[1],fields[2],price,list);
         return product;
     }
@@ -48,18 +48,18 @@ public class ProductService {
         return productList;
     }
 
-    public List<Integer> getPromotionTypeList(String barcode) throws IOException {
+    public List<Promotion> getPromotions(String barcode) throws IOException {
 
-        List<Integer> promotionList = new ArrayList<Integer>();
+        List<Promotion> promotionList = new ArrayList<Promotion>();
 
         if(buyTwoGetOneList.contains(barcode)){
-            promotionList.add(PromotionFactory.BUY_TWO_GET_ONE);
+            promotionList.add(PromotionFactory.getInstance(PromotionFactory.BUY_TWO_GET_ONE));
         }
         if(secondHalfPriceList.contains(barcode)){
-            promotionList.add(PromotionFactory.SECOND_HALF_PRICE);
+            promotionList.add(PromotionFactory.getInstance(PromotionFactory.SECOND_HALF_PRICE));
         }
         if(isExist(discountList,barcode)){
-            promotionList.add(PromotionFactory.DISCOUNT);
+            promotionList.add(PromotionFactory.getInstance(PromotionFactory.DISCOUNT));
         }
         return promotionList;
     }
