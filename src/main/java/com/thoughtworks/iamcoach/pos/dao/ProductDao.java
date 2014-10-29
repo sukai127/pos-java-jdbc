@@ -21,7 +21,8 @@ public class ProductDao extends DbUtils{
             Product product = new Product(resultSet.getInt("id"),resultSet.getString("barcode"),
                     resultSet.getString("name"),resultSet.getString("unit"),
                     resultSet.getDouble("price"),null,null);
+            productList.add(product);
         }
-        return null;
+        return productList;
     }
 }

@@ -15,7 +15,6 @@ public class ProductDaoTest {
         ProductDao productDao = new ProductDao();
         List<Product> productList = productDao.getProductList();
         assertThat(productList.size()).isEqualTo(6);
-        assertThat(productList.get(0).getCategory().getName()).isEqualTo("饮料");
-        assertThat(productList.get(1).getPromotions().size()).isEqualTo(3);
+        assertThat(productList.get(1).getName()).isEqualTo("雪碧");
     }
 }
