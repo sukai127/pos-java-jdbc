@@ -32,6 +32,11 @@
             <version>2.0M10</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.33</version>
+        </dependency>
     </dependencies>
 
     <build>
