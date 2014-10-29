@@ -17,8 +17,10 @@ public class CategoryDao extends DbUtils{
     private ResultSet resultSet;
 
     public List<Category> getCategoryList() throws SQLException {
+
         List<Category> categoryList = new ArrayList<Category>();
         String sql = "select * from category";
+
         connection = getConnection();
         preparedStatement = connection.prepareStatement(sql);
         resultSet = preparedStatement.executeQuery();
@@ -30,7 +32,17 @@ public class CategoryDao extends DbUtils{
         return categoryList;
     }
 
-    public Category getCategory(int id) {
-        return null;
+    public Category getCategory(int id) throws SQLException {
+
+        String sql = "select * from category where id=?";
+
+        connection = getConnection();
+        preparedStatement=connection.prepareStatement(sql);
+        preparedStatement.setInt(1,id);
+        resultSet = preparedStatement.executeQuery();
+
+        resultSet.next();
+        Category category = new Category(resultSet.getInt("id"),resultSet.getString("name"));
+        return category;
     }
 }

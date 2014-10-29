@@ -19,7 +19,7 @@ public class CategoryDaoTest {
     }
 
     @Test
-    public void should_return_category_when_input_id(){
+    public void should_return_category_when_input_id() throws SQLException {
 
         CategoryDao categoryDao = new CategoryDao();
         Category category = categoryDao.getCategory(1);
