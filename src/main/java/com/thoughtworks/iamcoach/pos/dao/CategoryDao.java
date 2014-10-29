@@ -32,13 +32,13 @@ public class CategoryDao extends DbUtils{
         return categoryList;
     }
 
-    public Category getCategory(int id) throws SQLException {
+    public Category getCategory(int productId) throws SQLException {
 
-        String sql = "select * from category where id=?";
+        String sql = "select * from category c,product p where p.category_id = c.id and p.id=?";
 
         connection = getConnection();
         preparedStatement=connection.prepareStatement(sql);
-        preparedStatement.setInt(1,id);
+        preparedStatement.setInt(1,productId);
         resultSet = preparedStatement.executeQuery();
 
         resultSet.next();
