@@ -1,10 +1,12 @@
 package com.thoughtworks.iamcoach.pos.service;
 
+import com.thoughtworks.iamcoach.pos.dao.ProductDao;
 import com.thoughtworks.iamcoach.pos.utils.FileUtils;
 import com.thoughtworks.iamcoach.pos.model.Product;
 import com.thoughtworks.iamcoach.pos.model.Promotion;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +15,7 @@ public class ProductService {
     private static List<String> buyTwoGetOneList;
     private static List<String> secondHalfPriceList;
     private static List<String> discountList;
+    private ProductDao productDao = new ProductDao();
 
     static{
         try {
@@ -35,13 +38,12 @@ public class ProductService {
         return product;
     }
 
-    public List<Product> getProductList() throws IOException {
+    public List<Product> getProductList() throws SQLException, IOException {
 
-        List<Product> productList = new ArrayList<Product>();
-        List<String> productStringList = FileUtils.get("products.txt");
+        List<Product> productList = productDao.getProductList();
 
-        for(String str : productStringList){
-            Product product = this.buildProduct(str);
+        for(Product str : productList){
+            Product product = this.buildProduct("");
             productList.add(product);
         }
 

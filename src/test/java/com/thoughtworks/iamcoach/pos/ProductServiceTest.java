@@ -31,7 +31,7 @@ public class ProductServiceTest {
     }
 
     @Test
-    public void should_return_a_product_list() throws IOException {
+    public void should_return_a_product_list() throws Exception {
 
         List<Product> productList = productService.getProductList();
 

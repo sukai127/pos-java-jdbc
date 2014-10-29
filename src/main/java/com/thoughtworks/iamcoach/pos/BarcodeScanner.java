@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BarcodeScanner implements Scanner{
-    public Product getProduct(String barcode) throws IOException {
+    public Product getProduct(String barcode) throws Exception {
 
         ProductService productService = new ProductService();
         List<Product> list = productService.getProductList();
@@ -23,7 +23,7 @@ public class BarcodeScanner implements Scanner{
     }
 
     @Override
-    public List scan(List<String> barcodes) throws IOException {
+    public List scan(List<String> barcodes) throws Exception {
         List<CartItem> cartitemList = new ArrayList<CartItem>();
 
         for(String str : barcodes){
@@ -42,7 +42,7 @@ public class BarcodeScanner implements Scanner{
         return -1;
     }
 
-    private List<CartItem> addCount(String str, List<CartItem> cartitemList) throws IOException {
+    private List<CartItem> addCount(String str, List<CartItem> cartitemList) throws Exception {
 
         String []fields = str.split("-");
         String barcode = fields[0];

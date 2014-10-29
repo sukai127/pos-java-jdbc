@@ -29,4 +29,8 @@ public class CategoryDao extends DbUtils{
         }
         return categoryList;
     }
+
+    public Category getCategory(int id) {
+        return null;
+    }
 }

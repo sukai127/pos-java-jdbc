@@ -13,7 +13,7 @@ import static org.junit.Assert.assertEquals;
 public class BarcodeScannerTest {
 
     @Test
-    public void should_get_a_product_when_input_an_barcode() throws IOException {
+    public void should_get_a_product_when_input_an_barcode() throws Exception {
 
         BarcodeScanner barcodeScanner = new BarcodeScanner();
         String barcode = "ITEM000001";
@@ -24,7 +24,7 @@ public class BarcodeScannerTest {
     }
 
     @Test
-    public void should_get_cartItem_list() throws IOException {
+    public void should_get_cartItem_list() throws Exception {
 
         BarcodeScanner barcodeScanner = new BarcodeScanner();
         List<String> list = new ArrayList<String>();
