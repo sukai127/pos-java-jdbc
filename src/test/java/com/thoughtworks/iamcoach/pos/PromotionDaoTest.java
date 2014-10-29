@@ -22,10 +22,10 @@ public class PromotionDaoTest {
     }
 
     @Test
-    public void should_return_types_when_input_productId(){
+    public void should_return_types_when_input_productId() throws SQLException {
 
         PromotionDao promotionDao = new PromotionDao();
-        List<Integer> list =  promotionDao.getPromotionTypes(1);
+        List<Integer> list =  promotionDao.getPromotionTypes(2);
 
         assertThat(list.size()).isEqualTo(3);
         assertThat(list.get(0)).isEqualTo(0);
