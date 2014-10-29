@@ -6,6 +6,7 @@ import com.thoughtworks.iamcoach.pos.service.ProductService;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class BarcodeScanner implements Scanner{
@@ -29,6 +30,7 @@ public class BarcodeScanner implements Scanner{
         for(String str : barcodes){
             cartitemList = this.addCount(str,cartitemList);
         }
+        Collections.sort(cartitemList);
         return cartitemList;
     }
 

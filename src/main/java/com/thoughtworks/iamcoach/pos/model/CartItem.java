@@ -1,6 +1,6 @@
 package com.thoughtworks.iamcoach.pos.model;
 
-public class CartItem {
+public class CartItem implements Comparable{
     private Product product;
     private double count;
     private double money;
@@ -36,5 +36,11 @@ public class CartItem {
 
     public void setMoney(double money) {
         this.money = money;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        CartItem cartItem = (CartItem)o;
+        return this.getProduct().getCategory().getId() - cartItem.getProduct().getCategory().getId() ;
     }
 }
