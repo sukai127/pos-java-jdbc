@@ -17,7 +17,7 @@ public class PromotionDao extends DbUtils{
 
         List<Integer> promotionTypes = new ArrayList<Integer>();
         String sql = "select * from promotion";
-        
+
         connection = getConnection();
         preparedStatement = connection.prepareStatement(sql);
         resultSet = preparedStatement.executeQuery();

@@ -36,6 +36,7 @@ public class ProductServiceTest {
         List<Product> productList = productService.getProductList();
 
         assertThat(productList.size()).isEqualTo(6);
+        assertThat(productList.get(0).getCategory().getName()).isEqualTo("饮料");
         assertThat(productList.get(0).getName()).isEqualTo("可乐");
         assertThat(productList.get(1).getPromotions().size()).isEqualTo(3);
     }
