@@ -37,4 +37,8 @@ public class PromotionService {
             return 100;
         }
     }
+
+    public List<Promotion> getPromotionList(int id) {
+        return null;
+    }
 }
