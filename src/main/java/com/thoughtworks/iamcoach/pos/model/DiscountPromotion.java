@@ -5,7 +5,7 @@ import com.thoughtworks.iamcoach.pos.service.PromotionService;
 public class DiscountPromotion extends Promotion{
 
     private PromotionService promotionService = new PromotionService();
-    
+
     @Override
     public double getMoney(CartItem cartItem) {
 
