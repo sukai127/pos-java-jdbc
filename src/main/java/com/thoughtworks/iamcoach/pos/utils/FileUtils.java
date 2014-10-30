@@ -1,12 +1,12 @@
 package com.thoughtworks.iamcoach.pos.utils;
 
-import java.io.IOException;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.List;
+import java.io.*;
+import java.nio.file.*;
+import java.util.*;
 
 public class FileUtils {
+
+    private static Properties properties = new Properties();
 
     public static List<String> get (String filename) throws IOException {
 
@@ -16,7 +16,11 @@ public class FileUtils {
         return Files.readAllLines(path);
     }
 
-    public static String getValue(String user) {
-        return null;
+    public static String getValue(String user) throws IOException {
+
+        InputStream inputStream = FileUtils.class.getClassLoader().getResourceAsStream("pos.properties");
+        properties.load(inputStream);
+
+        return properties.getProperty(user);
     }
 }
