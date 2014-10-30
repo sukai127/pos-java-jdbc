@@ -3,7 +3,6 @@ package com.thoughtworks.iamcoach.pos.model;
 public class CartItem implements Comparable{
     private Product product;
     private double count;
-    private double money;
 
     public CartItem(){
 
@@ -28,14 +27,6 @@ public class CartItem implements Comparable{
 
     public void setCount(double count) {
         this.count = count;
-    }
-
-    public double getMoney() {
-        return money;
-    }
-
-    public void setMoney(double money) {
-        this.money = money;
     }
 
     @Override

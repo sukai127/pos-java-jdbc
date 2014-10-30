@@ -31,10 +31,6 @@ public class Product {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public Category getCategory() {
         return category;
     }
@@ -47,32 +43,16 @@ public class Product {
         return price;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
     public String getUnit() {
         return unit;
-    }
-
-    public void setUnit(String unit) {
-        this.unit = unit;
     }
 
     public String getBarcode() {
         return barcode;
     }
 
-    public void setBarcode(String barcode) {
-        this.barcode = barcode;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public List<Promotion> getPromotions() {

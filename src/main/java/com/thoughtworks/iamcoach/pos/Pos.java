@@ -23,16 +23,8 @@ public class Pos {
         return scanner;
     }
 
-    public void setScanner(Scanner scanner) {
-        this.scanner = scanner;
-    }
-
     public PromotionService getPromotionService() {
         return promotionService;
-    }
-
-    public void setPromotionService(PromotionService promotionService) {
-        this.promotionService = promotionService;
     }
 
     public void printInventory(List<String> barcodes) throws Exception {
