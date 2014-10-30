@@ -16,7 +16,7 @@ import java.util.List;
 public class ProductService {
 
     private ProductDao productDao = new ProductDao();
-    private CategoryDao categoryDao = new CategoryDao();
+    private CategoryService categoryService = new CategoryService();
     private PromotionDao promotionDao = new PromotionDao();
 
     public List<Product> getProductList() throws SQLException {
@@ -24,16 +24,11 @@ public class ProductService {
         List<Product> productList = productDao.getProductList();
 
         for(Product product : productList){
-            product.setCategory(this.getCategory(product.getId()));
+            product.setCategory(categoryService.getCategory(product.getId()));
             product.setPromotions(this.getPromotionList(product.getId()));
         }
 
         return productList;
-    }
-
-    private Category getCategory(int id) throws SQLException {
-
-        return categoryDao.getCategory(id);
     }
 
     private List<Promotion> getPromotionList(int id) throws SQLException {
