@@ -4,6 +4,7 @@ import com.thoughtworks.iamcoach.pos.model.*;
 import com.thoughtworks.iamcoach.pos.service.PromotionService;
 import org.junit.Test;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,7 +39,7 @@ public class PromotionServiceTest {
     }
 
     @Test
-    public void should_return_promotionList_when_input_productId(){
+    public void should_return_promotionList_when_input_productId() throws SQLException {
         PromotionService promotionService = new PromotionService();
 
         List<Promotion> promotions = promotionService.getPromotionList(2);

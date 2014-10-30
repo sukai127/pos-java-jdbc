@@ -4,6 +4,8 @@ import com.thoughtworks.iamcoach.pos.dao.PromotionDao;
 import com.thoughtworks.iamcoach.pos.model.CartItem;
 import com.thoughtworks.iamcoach.pos.model.Promotion;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -38,7 +40,16 @@ public class PromotionService {
         }
     }
 
-    public List<Promotion> getPromotionList(int id) {
-        return null;
+    public List<Promotion> getPromotionList(int id) throws SQLException {
+
+        List<Integer> promotionTypes = promotionDao.getPromotionTypes(id);
+        List<Promotion> promotionList = new ArrayList<Promotion>();
+
+        for(Integer type : promotionTypes){
+            Promotion promotion = PromotionFactory.getInstance(type);
+            promotionList.add(promotion);
+        }
+
+        return promotionList;
     }
 }
