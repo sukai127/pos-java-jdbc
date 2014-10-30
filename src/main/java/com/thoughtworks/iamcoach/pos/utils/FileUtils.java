@@ -15,4 +15,8 @@ public class FileUtils {
 
         return Files.readAllLines(path);
     }
+
+    public static String getValue(String user) {
+        return null;
+    }
 }

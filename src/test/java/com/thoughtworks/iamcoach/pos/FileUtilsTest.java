@@ -14,11 +14,15 @@ public class FileUtilsTest {
     @Test
     public void getTest() throws IOException {
 
-        FileUtils fileUtils = mock(FileUtils.class);
-        BufferedReader br = mock(BufferedReader.class);
-        when(br.readLine()).thenReturn("line1", "line2", "line3");
-
-        List list = fileUtils.get("cart.txt");
+        List list = FileUtils.get("cart.txt");
         assertThat(list.size()).isEqualTo(14);
+    }
+
+    @Test
+    public void should_return_pos_when_input_key() throws Exception{
+
+        String value = FileUtils.getValue("user");
+        assertThat(value).isEqualTo("pos");
+
     }
 }
