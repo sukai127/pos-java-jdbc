@@ -29,8 +29,12 @@ public class PromotionService {
     }
 
 
-    public int getDiscount(int id) throws Exception {
+    public int getDiscount(int id){
 
-        return promotionDao.getDiscount(id);
+        try {
+            return promotionDao.getDiscount(id);
+        } catch (Exception e) {
+            return 100;
+        }
     }
 }
