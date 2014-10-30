@@ -47,4 +47,8 @@ public class PromotionDao extends DbUtils{
 
         return promotionTypes;
     }
+
+    public int getDiscount(int i) {
+        return 0;
+    }
 }
