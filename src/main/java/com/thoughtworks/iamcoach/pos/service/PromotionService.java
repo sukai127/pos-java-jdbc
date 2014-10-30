@@ -26,4 +26,7 @@ public class PromotionService {
     }
 
 
+    public int getDiscount(int id) {
+        return 0;
+    }
 }
