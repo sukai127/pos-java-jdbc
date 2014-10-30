@@ -48,7 +48,16 @@ public class PromotionDao extends DbUtils{
         return promotionTypes;
     }
 
-    public int getDiscount(int i) {
-        return 0;
+    public int getDiscount(int id) throws Exception{
+        String sql = "select discount from productPromotions where product_id = ? and promotion_id = 3";
+
+        connection = getConnection();
+        preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setInt(1,id);
+        resultSet = preparedStatement.executeQuery();
+
+        resultSet.next();
+
+        return resultSet.getInt("discount");
     }
 }
