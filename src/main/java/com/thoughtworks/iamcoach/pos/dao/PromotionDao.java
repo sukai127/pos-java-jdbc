@@ -13,23 +13,6 @@ public class PromotionDao extends DbUtils{
     private PreparedStatement preparedStatement;
     private ResultSet resultSet;
 
-    public List<Integer> getPromotionTypes() throws SQLException {
-
-        List<Integer> promotionTypes = new ArrayList<Integer>();
-        String sql = "select * from promotion";
-
-        connection = getConnection();
-        preparedStatement = connection.prepareStatement(sql);
-        resultSet = preparedStatement.executeQuery();
-
-        while (resultSet.next()){
-            int type = resultSet.getInt("type");
-            promotionTypes.add(type);
-        }
-
-        return promotionTypes;
-    }
-
     public List<Integer> getPromotionTypes(int id) throws SQLException {
 
         List<Integer> promotionTypes = new ArrayList<Integer>();
