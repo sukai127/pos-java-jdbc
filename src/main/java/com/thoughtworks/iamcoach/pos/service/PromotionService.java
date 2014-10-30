@@ -1,5 +1,6 @@
 package com.thoughtworks.iamcoach.pos.service;
 
+import com.thoughtworks.iamcoach.pos.dao.PromotionDao;
 import com.thoughtworks.iamcoach.pos.model.CartItem;
 import com.thoughtworks.iamcoach.pos.model.Promotion;
 
@@ -7,6 +8,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class PromotionService {
+
+    private PromotionDao promotionDao = new PromotionDao();
 
     public double calculateMoney(CartItem cartItem) {
 
@@ -26,7 +29,8 @@ public class PromotionService {
     }
 
 
-    public int getDiscount(int id) {
-        return 0;
+    public int getDiscount(int id) throws Exception {
+
+        return promotionDao.getDiscount(id);
     }
 }
