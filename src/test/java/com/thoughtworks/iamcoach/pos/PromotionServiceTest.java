@@ -33,9 +33,7 @@ public class PromotionServiceTest {
     @Test
     public void should_return_75_when_input_productId() throws Exception{
 
-        PromotionService promotionService = mock(PromotionService.class);
-
-        when(promotionService.getDiscount(2)).thenReturn(75);
+        PromotionService promotionService = new PromotionService();
 
         int result = promotionService.getDiscount(2);
 
