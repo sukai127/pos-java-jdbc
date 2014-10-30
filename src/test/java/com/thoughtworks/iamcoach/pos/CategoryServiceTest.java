@@ -1,7 +1,18 @@
 package com.thoughtworks.iamcoach.pos;
 
-/**
- * Created by sukai on 10/30/14.
- */
+import com.thoughtworks.iamcoach.pos.model.Category;
+import com.thoughtworks.iamcoach.pos.service.CategoryService;
+import org.junit.Test;
+
+import static org.fest.assertions.api.Assertions.assertThat;
+
 public class CategoryServiceTest {
+    @Test
+    public void should_return_category_when_input_productId(){
+        
+        CategoryService categryService = new CategoryService();
+        Category category = categryService.getCategory(1);
+
+        assertThat(category.getName()).isEqualTo("饮料");
+    }
 }
