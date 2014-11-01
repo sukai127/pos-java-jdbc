@@ -10,17 +10,16 @@ public class FileUtils {
 
     public static List<String> get (String filename) throws IOException {
 
-        String filepath = FileUtils.class.getClassLoader().getResource(filename).getPath();
-        Path path = FileSystems.getDefault().getPath(filepath);
+        Path path = Paths.get("src/main/resources",filename);
 
         return Files.readAllLines(path);
     }
 
-    public static String getValue(String user) throws IOException {
+    public static String getValue(String key) throws IOException {
 
         InputStream inputStream = FileUtils.class.getClassLoader().getResourceAsStream("pos.properties");
         properties.load(inputStream);
 
-        return properties.getProperty(user);
+        return properties.getProperty(key);
     }
 }
